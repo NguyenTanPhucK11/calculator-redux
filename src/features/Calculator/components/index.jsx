@@ -21,7 +21,7 @@ function Calculator(props) {
   console.log(initMulCal);
   let total = lastCal.current;
   const calBtn = [
-    ['M+', 'M-'],
+    ['M+', 'M-', 'MR', 'MC'],
     ['AC', '+/-', '%', '/'],
     [7, 8, 9, 'X'],
     [4, 5, 6, '-'],
@@ -34,14 +34,11 @@ function Calculator(props) {
     newMulCal.push(btn);
     setMulCal(newMulCal);
     if (btn === 'M+') {
-      console.log('M+');
       dispatch(addMulCal(mulCal));
-      console.log('M++++');
-
       setMulCal('');
     }
     if (btn === 'M-') {
-      dispatch(removeMulCal(mulCal));
+      dispatch(removeMulCal(1));
       setMulCal('');
     }
     if (typeof btn === 'number') {

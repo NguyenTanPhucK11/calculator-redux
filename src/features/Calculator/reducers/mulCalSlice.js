@@ -14,7 +14,8 @@ export const mulCalSlice = createSlice({
     },
     removeMulCal: (state, action) => {
       const newState = [...state];
-      newState.slice(action.payload, 1);
+
+      newState.splice(action.payload, 1);
       return newState;
     },
   },
